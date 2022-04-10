@@ -102,7 +102,6 @@ function check_guess() {
 
 function flip_cell(result, key, i) {
     setTimeout(function() {
-        console.log(result + "," + i);
         document.getElementById("cell-" + (current_cell - num_cols + i)).classList.add(result, "flip");
         document.getElementById("key-" + key).classList.add(result);
     }, 250 * i);
