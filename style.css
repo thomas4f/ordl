@@ -103,7 +103,7 @@ body {
 		transform: translateX(-5px);
 	}
 	92% {
-		-webkit-transform: translateX(5px);
+		transform: translateX(5px);
 	}
 	0%,
 	100% {
