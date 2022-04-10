@@ -110,7 +110,7 @@ function flip_cell(result, key, i) {
 function register_events() {
     document.addEventListener('keydown', handle_input);
 
-    for (let key of document.querySelectorAll("#keyboard > div > button")) {
+    for (let key of document.querySelectorAll("#keyboard>div>button")) {
         key.addEventListener("click", function() {
             handle_input({
                 key: key.innerText
@@ -120,7 +120,7 @@ function register_events() {
 }
 
 function main() {
-    create_matrix();
+    create_matrix(num_cols, num_rows);
     create_keyboard();
     register_events();
 }

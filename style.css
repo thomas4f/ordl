@@ -41,6 +41,7 @@ body {
 	margin: 5px;
 	font-size: 2em;
 	font-weight: bold;
+	user-select: none;
 }
 
 #keyboard {
@@ -56,13 +57,14 @@ body {
 	margin: 2px;
 	border-radius: 4px;
 	text-transform: uppercase;
+	cursor: pointer;
 }
 
-#matrix .correct,
-#keyboard .correct {
+#matrix .incorrect,
+#keyboard .incorrect {
 	color: rgb(255, 255, 255);
-	background-color: rgb(106, 170, 100);
-	border-color: rgb(106, 170, 100);
+	background-color: rgb(120, 124, 126);
+	border-color: rgb(120, 124, 126);
 	transition-delay: 125ms;
 }
 
@@ -74,11 +76,11 @@ body {
 	transition-delay: 125ms;
 }
 
-#matrix .incorrect,
-#keyboard .incorrect {
+#matrix .correct,
+#keyboard .correct {
 	color: rgb(255, 255, 255);
-	background-color: rgb(120, 124, 126);
-	border-color: rgb(120, 124, 126);
+	background-color: rgb(106, 170, 100);
+	border-color: rgb(106, 170, 100);
 	transition-delay: 125ms;
 }
 
