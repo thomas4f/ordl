@@ -121,7 +121,7 @@ function register_events() {
 }
 
 function main() {
-    create_matrix(num_cols, num_rows);
+    create_matrix();
     create_keyboard();
     register_events();
 }
