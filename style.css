@@ -68,6 +68,7 @@ body {
 	line-height: 3em;
 	margin: 2px;
 	user-select: none;
+	cursor: pointer;
 }
 
 #matrix .incorrect,
