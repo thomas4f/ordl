@@ -126,7 +126,7 @@ function main() {
 }
 
 var num_cols = 4;
-var num_rows = 8;
+var num_rows = 7;
 var enter_auto = false;
 var word = words_easy[Math.floor(Math.random() * words_easy.length)].toUpperCase();
 
