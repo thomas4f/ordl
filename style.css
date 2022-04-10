@@ -19,9 +19,9 @@ body {
 
 #matrix {
 	display: flex;
-	flex-direction: columN;
+	flex-direction: column;
 	width: 100%;
-	max-width: 330px;
+	max-width: 320px;
 	flex-grow: 1;
 	justify-content: center;
 }
@@ -38,7 +38,7 @@ body {
 	justify-content: center;
 	text-transform: uppercase;
 	aspect-ratio: 1;
-	margin: 5px;
+	margin: 3px;
 	font-size: 2em;
 	font-weight: bold;
 	user-select: none;
@@ -47,17 +47,24 @@ body {
 #keyboard {
 	display: flex;
 	flex-direction: column;
-	align-items: center;
+	width: 100%;
+	max-width: 480px;
+	justify-content: center;
 }
 
-#keyboard>div>button {
-	border: 0;
-	padding: 0.75em;
+#keyboard>div {
+	display: flex;
+}
+
+#keyboard>div button {
+	flex-grow: 1;
 	background-color: rgb(211, 214, 218);
-	margin: 2px;
+	border: 0;
 	border-radius: 4px;
 	text-transform: uppercase;
-	cursor: pointer;
+	line-height: 2em;
+	margin: 2px;
+	user-select: none;
 }
 
 #matrix .incorrect,
