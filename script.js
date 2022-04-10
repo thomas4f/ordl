@@ -1,3 +1,9 @@
+// stuff
+var num_cols = 4;
+var num_rows = 7;
+var enter_auto = false;
+var word = words_easy[Math.floor(Math.random() * words_easy.length)].toUpperCase();
+
 function create_matrix() {
     let matrix = document.createDocumentFragment();
     let cell = 0;
@@ -62,8 +68,6 @@ function handle_input(event) {
             enter_required = true;
         }
     }
-
-    console.log("current_row is: " + current_row + ", current_cell is: " + current_cell + ", guess is: " + guess + ", game state is: " + game_state + ", enter_required is: " + enter_required);
 }
 
 function check_guess() {
@@ -76,7 +80,7 @@ function check_guess() {
         return;
     }
 
-    for (var i = 0; i < guess.length; i++) {
+    for (let i = 0; i < guess.length; i++) {
         if (guess.charAt(i) == word.charAt(i)) {
             flip_cell("correct", guess.charAt(i), i);
         } else if (word.indexOf(guess.charAt(i)) > -1) {
@@ -97,7 +101,6 @@ function check_guess() {
 }
 
 function flip_cell(result, key, i) {
-    console.log(key);
     setTimeout(function() {
         console.log(result + "," + i);
         document.getElementById("cell-" + (current_cell - num_cols + i)).classList.add(result, "flip");
@@ -121,14 +124,7 @@ function main() {
     create_matrix(num_cols, num_rows);
     create_keyboard();
     register_events();
-
-    console.log(word);
 }
-
-var num_cols = 4;
-var num_rows = 7;
-var enter_auto = false;
-var word = words_easy[Math.floor(Math.random() * words_easy.length)].toUpperCase();
 
 var game_state = 0;
 var current_row = 0;
