@@ -57,7 +57,10 @@ body {
 }
 
 #keyboard>div button {
-	flex-grow: 1;
+	flex: 1 1 0;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
 	background-color: rgb(211, 214, 218);
 	border: 0;
 	border-radius: 4px;
