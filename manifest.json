@@ -1,0 +1,14 @@
+{
+  "name": "ordl",
+  "short_name": "ordl",
+  "description": "",
+  "lang": "en-US",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#fff",
+  "icons": [{
+    "src": "",
+    "sizes": "",
+    "type": "image/png"
+}]
+}

@@ -92,6 +92,7 @@ function check_guess() {
 
     if (guess == word) {
         game_state = 1;
+        setTimeout(victory, 250*(num_cols+1));
     } else if (current_cell >= num_cols * num_rows) {
         game_state = 2;
     }
@@ -119,6 +120,27 @@ function register_events() {
     }
 }
 
+function victory() {
+  document.getElementById("victory").classList.remove("hidden");
+	var canvas = document.getElementById("canvas");
+	canvas.confetti = canvas.confetti || confetti.create(canvas, { resize: false });
+	
+	for (let i = 0; i < 5; i++) {
+		setTimeout(function timer() {
+			canvas.confetti({
+				particleCount: Math.random() * (75 - 25) + 25 * i,
+				angle: Math.random() * (110 - 70) + 70,
+				spread: 50,
+				startVelocity: 25,
+				gravity: 0.5,
+				ticks: 250,
+				spread: 90,
+				origin: { y: 1 }
+			});
+		}, i * 500);
+	}
+}
+
 function main() {
     create_matrix();
     create_keyboard();
@@ -132,4 +154,5 @@ var guess = "";
 var enter_required = false;
 var del_required = false;
 
-main();
+document.addEventListener("DOMContentLoaded", main);
+
