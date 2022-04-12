@@ -1,14 +1,13 @@
 {
-  "name": "ordl",
-  "short_name": "ordl",
-  "description": "",
-  "lang": "en-US",
-  "start_url": ".",
-  "display": "standalone",
-  "background_color": "#fff",
-  "icons": [{
-    "src": "",
-    "sizes": "",
-    "type": "image/png"
-}]
+	"manifest_version": 2,
+	"version": 1,
+	"name": "ordl",
+	"background_color": "#fff",
+	"display": "standalone",
+	"start_url": ".",
+	"icons": [{
+		"src": "favicon.png",
+		"sizes": "192x192",
+		"type": "image/png"
+	}]
 }
