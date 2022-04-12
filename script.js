@@ -121,14 +121,15 @@ function register_events() {
 }
 
 function victory() {
+	document.getElementById("answer").innerText = word;
   document.getElementById("victory").classList.remove("hidden");
 	var canvas = document.getElementById("canvas");
 	canvas.confetti = canvas.confetti || confetti.create(canvas, { resize: false });
 	
-	for (let i = 0; i < 5; i++) {
+	for (let i = 0; i <= num_rows-current_row; i++) {
 		setTimeout(function timer() {
 			canvas.confetti({
-				particleCount: Math.random() * (75 - 25) + 25 * i,
+				particleCount: (i+1)**2,
 				angle: Math.random() * (110 - 70) + 70,
 				spread: 50,
 				startVelocity: 25,
