@@ -1,3 +1,5 @@
+
+
 html {
 	height: 100%;
 }
@@ -6,7 +8,7 @@ body {
 	height: 100%;
 	padding: 0;
 	margin: 0;
-  font-family: sans-serif;
+	font-family: sans-serif;
 }
 
 #wrapper {
@@ -137,21 +139,20 @@ body {
 	}
 }
 
-
-#victory {
-    display: flex;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 0;
-    justify-content: center;
-    align-items: center;
+dialog {
+	display: flex;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	padding: 0;
+	justify-content: center;
+	align-items: center;
 }
 
-#victory>div {
+dialog>div {
 	width: 340px;
 	background-color: rgba(255, 255, 255, 1);
 	border-radius: 4px;
@@ -159,13 +160,13 @@ body {
 	box-shadow: 0 4px 23px 0 rgba(0, 0, 0, 0.5);
 }
 
-#victory>div>canvas {
-  width: 100%;
-  height: 100%;
-  position: absolute;
+dialog>div>canvas {
+	width: 100%;
+	height: 100%;
+	position: absolute;
 }
 
-#victory>div>div {
+dialog>div>div {
 	width: 100%;
 	height: 100%;
 	padding: 1em;
@@ -183,10 +184,12 @@ body {
 	margin: 0;
 }
 
-#answer {
+#answer-victory,
+#answer-loss {
 	font-weight: bold;
 }
-#victory>div>div>button {
+
+dialog>div>div>button {
 	border: 0;
 	width: 100%;
 	color: rgb(255, 255, 255);
@@ -198,5 +201,5 @@ body {
 }
 
 .hidden {
-  display: none !important;
+	display: none !important;
 }

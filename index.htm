@@ -4,8 +4,8 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="style.css" />
-		<link rel="icon" href="favicon.png">
-    <link rel="manifest" href="manifest.json">
+		<link rel="icon" href="favicon.png" />
+		<link rel="manifest" href="manifest.json" />
 	</head>
 	<body>
 		<div id="wrapper">
@@ -16,13 +16,26 @@
 					<canvas id="canvas"></canvas>
 					<div>
 						<p class="heading">Bra jobbat!</p>
-						<p>Rätt svar: <span id="answer"></span></p>
+						<p>Rätt svar: 
+								
+							<span id="answer-victory"></span>
+						</p>
 						<button onclick="location.reload();">Nytt spel</button>
 					</div>
-					
 				</div>
 			</dialog>
-
+			<dialog id="loss" class="hidden">
+				<div>
+					<div>
+						<p class="heading">Tyvärr ...</p>
+						<p>Rätt svar: 
+								
+							<span id="answer-loss"></span>
+						</p>
+						<button onclick="location.reload();">Nytt spel</button>
+					</div>
+				</div>
+			</dialog>
 		</div>
 		<script src="words.js"></script>
 		<script src="script.js"></script>
