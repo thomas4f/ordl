@@ -44,7 +44,7 @@ function create_keyboard() {
 }
 
 function handle_input(event) {
-	if (current_cell > num_cols * num_rows || game_state > 0) return;
+	if (current_cell > num_cols * num_rows || game_state > 0 || !can_interact) return;
 
 	if (guess.length > 0 && (event.key == "Backspace" || event.key == "DEL")) {
 		guess = guess.slice(0, -1);
@@ -80,6 +80,7 @@ function check_guess() {
 		return;
 	}
 
+	can_interact = false;
 	for (let i = 0; i < guess.length; i++) {
 		if (guess.charAt(i) == word.charAt(i)) {
 			flip_cell("correct", guess.charAt(i), i);
@@ -90,19 +91,24 @@ function check_guess() {
 		}
 	}
 
-	if (guess == word) {
-		game_state = 1;
-		document.getElementById("answer-victory").innerText = word;
-		document.getElementById("victory").classList.remove("hidden");
-		setTimeout(victory, 250 * (num_cols + 1));
-	} else if (current_cell >= num_cols * num_rows) {
-		game_state = 2;
-		document.getElementById("answer-loss").innerText = word;
-		document.getElementById("loss").classList.remove("hidden");
-	}
+	setTimeout(function() {
+		if (guess == word) {
+			game_state = 1;
+			document.getElementById("answer-victory").innerText = word;
+			document.getElementById("victory").classList.remove("hidden");
+			console.log("calling vic");
+			victory();
 
-	guess = "";
-	current_row++;
+		} else if (current_cell >= num_cols * num_rows) {
+			game_state = 2;
+			document.getElementById("answer-loss").innerText = word;
+			document.getElementById("loss").classList.remove("hidden");
+		}
+
+		guess = "";
+		current_row++;
+		can_interact = true;
+	}, num_cols * 250);
 }
 
 function flip_cell(result, key, i) {
@@ -130,11 +136,11 @@ function victory() {
 		resize: false
 	});
 
-	for (let i = 0; i <= num_rows - current_row; i++) {
-		setTimeout(function timer() {
+	for (let i = 0; i < num_rows - current_row; i++) {
+		setTimeout(function() {
 			canvas.confetti({
 				particleCount: (i + 1) ** 2,
-				angle: Math.random() * (110 - 70) + 70,
+				angle: Math.random() * (105 - 75) + 75,
 				spread: 50,
 				startVelocity: 25,
 				gravity: 0.5,
@@ -160,5 +166,6 @@ var current_cell = 0;
 var guess = "";
 var enter_required = false;
 var del_required = false;
+var can_interact = true;
 
 document.addEventListener("DOMContentLoaded", main);
