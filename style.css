@@ -1,5 +1,3 @@
-
-
 html {
 	height: 100%;
 }
@@ -24,7 +22,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	width: 100%;
-	max-width: 320px;
+	max-width: 300px;
 	flex-grow: 1;
 	justify-content: center;
 }
@@ -45,6 +43,19 @@ body {
 	font-size: 2em;
 	font-weight: bold;
 	user-select: none;
+}
+
+@supports not (aspect-ratio: 1) {
+	#matrix>div span::before {
+		float: left;
+		padding-top: 100%;
+		content: "";
+	}
+	#matrix>div span::after {
+		display: block;
+		content: "";
+		clear: both;
+	}
 }
 
 #keyboard {
@@ -203,3 +214,4 @@ dialog>div>div>button {
 .hidden {
 	display: none !important;
 }
+
