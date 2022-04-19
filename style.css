@@ -70,7 +70,7 @@ body {
 #keyboard>div {
 	display: flex;
 	flex-grow: 1;
-	max-height: 3em;
+	max-height: 3.5em;
 }
 
 #keyboard>div button {
