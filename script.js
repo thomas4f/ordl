@@ -153,11 +153,11 @@ function game_end() {
 		game_stats.streak = game_stats.streak + 1 || 1;
 		if (game_stats.streak > game_stats.longest_streak) game_stats.longest_streak = game_stats.streak;
 		document.getElementById("graph-" + current_row).classList.add("correct");
-		document.getElementById("stats-game_result").innerText = "Hurra!";
+		document.getElementById("game_result").innerText = "Hurra! 😊";
 		draw_confetti();
 	} else {
 		game_stats.streak = 0;
-		document.getElementById("stats-game_result").innerText = "Tyvärr ...";
+		document.getElementById("game_result").innerText = "Tyvärr ... 🤔";
 	}
 
 	setTimeout(function() {
@@ -168,6 +168,7 @@ function game_end() {
 	}, 250);
 
 
+	document.getElementById("game_answer").innerText = word;
 	document.getElementById("stat-rounds").innerText = game_stats.total;
 	document.getElementById("stat-wins").innerText = Object.values(game_stats.scores).reduce((a, b) => a + b, 0);
 	document.getElementById("stat-streak").innerText = game_stats.streak;

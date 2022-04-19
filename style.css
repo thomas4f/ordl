@@ -70,7 +70,7 @@ body {
 #keyboard>div {
 	display: flex;
 	flex-grow: 1;
-	max-height: 3.5em;
+	max-height: 3em;
 }
 
 #keyboard>div button {
@@ -164,17 +164,24 @@ body {
   transform: translateY(-50%);
 }
 
-.stats {
-	display: flex;
-	padding: 1em;
-	flex-direction: column;
+.summary>div {
+	margin: 1em;
+	text-align: center;
 }
 
-#stats-game_result {
+#game_result {
 	font-size: 2em;
-	text-align: center;
-	margin: 0.25em;
 	text-transform: uppercase;
+}
+
+#game_answer {
+	font-weight: bold;
+}
+
+.stats {
+	display: flex;
+	margin: 1em;
+	flex-direction: column;
 }
 
 .stats-header {
