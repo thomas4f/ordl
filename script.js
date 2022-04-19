@@ -134,6 +134,10 @@ function flip_cell(result, key, i) {
 function register_events() {
 	document.addEventListener('keydown', handle_input);
 	document.getElementById("new_game").addEventListener("click", function() { location.reload() });
+	
+	document.addEventListener('touchmove', function (event) {
+		if (event.scale !== 1) { event.preventDefault(); }
+	}, false);
 
 	for (let key of document.querySelectorAll("#keyboard>div>button")) {
 		key.addEventListener("click", function() {
