@@ -11,31 +11,33 @@
 		<div id="wrapper">
 			<div id="matrix"></div>
 			<div id="keyboard"></div>
-			<dialog id="victory" class="hidden">
-				<div>
-					<canvas id="canvas"></canvas>
-					<div>
-						<p class="heading">Bra jobbat!</p>
-						<p>Rätt svar: 
-								
-							<span id="answer-victory"></span>
-						</p>
-						<button onclick="location.reload();">Nytt spel</button>
+			<div id="modal" style="display: none;">
+				<canvas id="canvas"></canvas>
+				<div class="stats">
+					<span id="stats-game_result">-</span>
+					<div class="stats-header">
+						<div>
+							<div id="stat-rounds">-</div>
+							<div class="stat-title">Omgångar</div>
+						</div>
+						<div>
+							<div id="stat-wins">-</div>
+							<div class="stat-title">Segrar</div>
+						</div>
+						<div>
+							<div id="stat-streak">-</div>
+							<div class="stat-title">Segersvit</div>
+						</div>
+						<div>
+							<div id="stat-longest_streak">-</div>
+							<div class="stat-title">Längsta svit</div>
+						</div>
 					</div>
+					<div id="stats-graph"></div>
+					<button id="new_game">Nytt spel</button>
 				</div>
 			</dialog>
-			<dialog id="loss" class="hidden">
-				<div>
-					<div>
-						<p class="heading">Tyvärr ...</p>
-						<p>Rätt svar: 
-								
-							<span id="answer-loss"></span>
-						</p>
-						<button onclick="location.reload();">Nytt spel</button>
-					</div>
-				</div>
-			</dialog>
+
 		</div>
 		<script src="words.js"></script>
 		<script src="script.js"></script>
